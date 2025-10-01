@@ -4,8 +4,12 @@
   "description": "Translates numbers to scientific notation and back.",
   "publisher": "AceaSands",
   "version": "1.0.0",
-  "engines": { "vscode": "^1.104.0" },
-  "categories": ["Other"],
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Other"
+  ],
   "main": "./out/extension.js",
   "activationEvents": [
     "onCommand:scientific-notation-translator.convertSciToPlain"
@@ -58,6 +62,14 @@
       }
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aceaofspades/scientific-notation-translator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aceaofspades/scientific-notation-translator/issues"
+  },
+  "homepage": "https://github.com/aceaofspades/scientific-notation-translator#readme",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
