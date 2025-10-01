@@ -3,7 +3,7 @@
   "displayName": "Scientific Notation Translator",
   "description": "Translates numbers to scientific notation and back.",
   "publisher": "AceaSands",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.104.0"
   },
