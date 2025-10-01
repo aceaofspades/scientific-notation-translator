@@ -1,0 +1,80 @@
+{
+  "name": "scientific-notation-translator",
+  "displayName": "Scientific Notation Translator",
+  "description": "Translates numbers to scientific notation and back.",
+  "publisher": "AceaSands",
+  "version": "1.0.0",
+  "engines": { "vscode": "^1.104.0" },
+  "categories": ["Other"],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:scientific-notation-translator.convertSciToPlain"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "scientific-notation-translator.convertSelection",
+        "title": "Scientific Notation: Convert / Toggle (Selection)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "scientific-notation-translator.convertSelection",
+        "key": "alt+t",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Scientific Notation Translator",
+      "properties": {
+        "scientific-notation-translator.significantDigits": {
+          "type": "integer",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 21,
+          "description": "Max significant digits when creating scientific notation (mantissa will be trimmed)."
+        },
+        "scientific-notation-translator.lowerThreshold": {
+          "type": "number",
+          "default": 0.01,
+          "description": "Numbers with 0 < abs(x) < lowerThreshold convert to sci."
+        },
+        "scientific-notation-translator.upperThreshold": {
+          "type": "number",
+          "default": 999,
+          "description": "Numbers with abs(x) > upperThreshold convert to sci."
+        },
+        "scientific-notation-translator.alwaysConvertAllNumbers": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, any standalone number converts to sci regardless of thresholds."
+        },
+        "scientific-notation-translator.capitalE": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, uses 'E' instead of 'e' in scientific notation."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.104.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.34.0",
+    "typescript": "^5.9.2",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
