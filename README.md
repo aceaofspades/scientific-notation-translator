@@ -2,6 +2,8 @@
 
 Scientific Notation Translator lets you quickly switch between standard numbers and scientific notation using a hotkey (default: **Alt + T**).
 
+![Demo of Scientific Notation Translator](demo.gif)
+
 ## Features
 
 - **Standalone numerals only** are translated (not part of identifiers like `v1`, `Hello_World_003`, etc.).
